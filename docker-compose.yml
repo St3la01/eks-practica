@@ -1,0 +1,32 @@
+#Creado por ER
+#Fecha 20-07-26
+#Contenedor Tipo Proxy y App Node JS
+services:
+  proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eks-proxy
+    ports:
+      - "80:80"
+    networks:
+      - red-eks2
+    restart: unless-stopped
+
+  app:
+    build:
+      context: ./APP
+      dockerfile: Dockerfile_dev
+    container_name: eks-app
+    expose:
+      - "3000"
+    volumes:
+      - ./APP:/app
+      - /app/node_modules
+    networks:
+      - red-eks2
+    restart: unless-stopped
+
+networks:
+  red-eks2:
+    external: true

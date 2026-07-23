@@ -1,0 +1,17 @@
+#crealo
+#definir la imagen que voy a utilizar
+FROM node:20-slim
+#definir ruta dentro del contenedor
+WORKDIR /app
+#Copiar
+COPY package*.json ./
+#Ejecutar
+RUN npm install
+#instalar nodemon global para desarrollo
+RUN npm install -g nodemon
+#copiar el fuente
+COPY . .
+#exponer el puerto
+EXPOSE 3000
+#usar nodemon en vez de node
+CMD ["nodemon", "index.js"]
