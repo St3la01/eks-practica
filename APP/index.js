@@ -48,8 +48,8 @@ app.get("/", (req, res) => {
       <div class="card">
         <div class="docker">🐳</div>
         <h1>Docker + Express</h1>
-        <p>¡Hola desde Docker!</p>
-        <p><strong>Clase EKS26 - ERRR</strong></p>
+        <p>¡Estela Ram!</p>
+        <p><strong>Clase EKS- 26 </strong></p>
         <p>Lunes 20</p>
       </div>
     </body>
